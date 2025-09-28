@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Студенческий совет общежития №6 ИРНИТУ</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        
+        header {
+            background: linear-gradient(135deg, #00aeff, #ffa6f3);
+            padding: 20px 0;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin: 0 15px;
+        }
+
+        .main-image {
+            width: 100%;
+            height: auto;
+            max-height: 475px;
+            border: 1px solid silver;
+            margin: 16px 0;
+            box-shadow: 0 0 16px silver;
+            border-radius: 16px;
+            object-fit: cover;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2.2rem;
+            margin: 16px 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        
+        main {
+            padding: 20px 0;
+        }
+
+        section {
+            margin-bottom: 40px;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            color: #34495e;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            text-align: center;
+            border-bottom: 3px solid #00aeff;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #2c3e50;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 16px;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        
+        .members-grid {
+            display: grid;
+            gap: 25px;
+            grid-template-columns: 1fr;
+        }
+
+        .member-card {
+            border: 1px solid #e1e8ed;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            background: white;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .member-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .member-content {
+            display: flex;
+            flex-direction: row;
+            min-height: 200px;
+        }
+
+        .member-image {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .member-info {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .member-info h3 {
+            color: #00aeff;
+            margin-bottom: 10px;
+        }
+
+        .member-info p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .photo-item {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .photo-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+       
+        footer {
+            background: linear-gradient(135deg, #34495e, #2c3e50);
+            color: white;
+            padding: 30px 0;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #ffa6f3;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        
+        @media (max-width: 1024px) {
+            .photo-gallery {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .member-content {
+                flex-direction: column;
+            }
+            
+            .member-image {
+                width: 100%;
+                height: 250px;
+            }
+
+            .photo-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            section {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .photo-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .member-info {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            .header-content {
+                margin: 0 10px;
+                padding: 15px;
+            }
+        }
+
+        .accent-color {
+            color: #00aeff;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #00aeff20, #ffa6f320);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #00aeff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <img class="main-image" src="https://psv4.userapi.com/s/v1/d2/atNIg9T_80YXYjYmRvN6SvawNrRzsO-KoV6_tIYOwvpAgC59uJxjUYm2R2uWMTgWYuxpi_I6_Cl1aJ7y8lIMggscWy2xkd1E4-dWc99YiSUddmu-dQgHe17wlHCIN7VOUG4ZTZbpOtaQ/FINAL.png" alt="Эмблема студенческого совета общежития №6 ИРНИТУ">
+                <h1>СТУДЕНЧЕСКИЙ СОВЕТ ОБЩЕЖИТИЯ №6 ИРНИТУ</h1>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="intro">
+            <div class="highlight">
+                <p><strong>Всем здравствуйте!</strong> На связи председатель студенческого совета общежития №6, Николаева Анастасия. Здесь я расскажу о составе студсовета на 2025/2026 год и нашей деятельности.</p>
+            </div>
+        </section>
+
+        <section class="members">
+            <h2>СОСТАВ СТУДСОВЕТА</h2>
+            <div class="members-grid">
+                
+                <article class="member-card">
+                    <div class="member-content">
+                        <img src="https://sun9-88.userapi.com/s/v1/ig2/Nwx4aXdDWWwVYnxVKUWhSgJiW2sZtVQ0clDNxThzKiS7ri_4dYsRyhNJnRHplbN7U71BAxYsNN6jmiEiKhVK0JzF.jpg?quality=95&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720,1080x1080,1083x1083&from=bu&cs=1083x0"
+                             alt="Николаева Анастасия - председатель студенческого совета"
+                             class="member-image">
+                        <div class="member-info">
+                            <h3>ПРЕДСЕДАТЕЛЬ СТУДЕНЧЕСКОГО СОВЕТА</h3>
+                            <p><strong>Николаева Анастасия, ученица ЭПЭБ-24-1</strong><br>
+                            Председатель студсовета — это главный представитель студенчества, связующее звено между администрацией и проживающими. Его работа требует развитых лидерских качеств, ответственности и отличных организаторских способностей. Это не просто формальный лидер, а настоящий «двигатель» студенческой жизни.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="member-card">
+                    <div class="member-content">
+                        <img src="https://sun9-11.userapi.com/s/v1/ig2/mLToAqy4Je34vD7eJ6iDq1UI9E_1hAhcOoafKQOaA91yMVEOnWROZVCDcXKhMOktvECPxIPY4UnxuEM2vuLBUIjb.jpg?quality=95&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720,891x891&from=bu&cs=891x0"
+                             alt="Шашкина Ульяна - председатель культурно-массового сектора"
+                             class="member-image">
+                        <div class="member-info">
+                            <h3>ПРЕДСЕДАТЕЛЬ КУЛЬТУРНО-МАССОВОГО СЕКТОРА</h3>
+                            <p><strong>Шашкина Ульяна, ученица СТЭб-24-1</strong><br>
+                            Этот человек — главный вдохновитель и организатор праздников и неформальных событий в студенческой жизни. Его миссия — наполнить учебный год яркими красками, создать атмосферу творчества и сплоченности.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="member-card">
+                    <div class="member-content">
+                        <img src="https://sun9-26.userapi.com/s/v1/ig2/Eky4S68EKtb60XQh86-VP8JGObKEyhd5kb2Hjx-7slLwpCvGjjDTFsEYtaNf39KuRCyV5xLhMvPUn60gOyfOO8eI.jpg?quality=95&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,514x514&from=bu&cs=514x0"
+                             alt="Нестерова Мария - председатель санитарного сектора"
+                             class="member-image">
+                        <div class="member-info">
+                            <h3>ПРЕДСЕДАТЕЛЬ САНИТАРНОГО СЕКТОРА</h3>
+                            <p><strong>Нестерова Мария, ученица БТПб-23-1</strong><br>
+                            Этот руководитель заботится о быте и здоровье студентов, особенно тех, кто проживает в общежитии. Его роль часто недооценивают, но именно от работы этого сектора зависит комфорт и безопасность повседневной жизни.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="member-card">
+                    <div class="member-content">
+                        <img src="https://sun9-55.userapi.com/s/v1/ig2/3rd2YsMeBm4FYxaqFB_bsvN63eC3hsy3XvnR7VaX3RRTq8gQsHsHheWk0RCnKrhCPaMUAK6hqNKuQN4TWSnU6kPH.jpg?quality=95&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,537x537&from=bu&cs=537x0"
+                             alt="Кузьмин Андрей - председатель редакционного сектора"
+                             class="member-image">
+                        <div class="member-info">
+                            <h3>ПРЕДСЕДАТЕЛЬ РЕДАКЦИОННОГО СЕКТОРА</h3>
+                            <p><strong>Кузьмин Андрей, ученик Суз-23-1</strong><br>
+                            Редакционный сектор — это волшебная мастерская, где рождается видимая душа мероприятий. Если культмассовый сектор придумывает идеи, то редакционный — вдыхает в них жизнь, создавая тот самый неповторимый антураж.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="member-card">
+                    <div class="member-content">
+                        <img src="https://sun9-77.userapi.com/s/v1/ig2/3QywgcKhobHl54QHeMGeLyl5V5wdY9uvjFWa7gvXaVOW6MJHe9Vi-CklHuY4sFgqjG1u7sjvuTSzjxB0iic67ySR.jpg?quality=95&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640&from=bu&cs=640x0"
+                             alt="Файзрахманова Альфия - председатель информационного сектора"
+                             class="member-image">
+                        <div class="member-info">
+                            <h3>ПРЕДСЕДАТЕЛЬ ИНФОРМАЦИОННОГО СЕКТОРА</h3>
+                            <p><strong>Файзрахманова Альфия, ученица ИСТб-24-2</strong><br>
+                            Если редакционный сектор создает «картинку», то информационный отвечает за «слово» и оперативное распространение новостей. Это главный рупор студенческого совета, обеспечивающий быструю и точную коммуникацию со всеми студентами.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="member-card">
+                    <div class="member-content">
+                        <img src="https://sun9-24.userapi.com/s/v1/ig2/jVJKJ2BKwdyNIxAy64f_O2-WVQVeTDTaLMHXa1ENIDpoQQ8idtv2bM5HIjjU_HXghUVGhn_Fh_u4jxiJj9f5lhZj.jpg?quality=95&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,495x495&from=bu&cs=495x0"
+                             alt="Макаров Никита - председатель спортивного сектора"
+                             class="member-image">
+                        <div class="member-info">
+                            <h3>ПРЕДСЕДАТЕЛЬ СПОРТИВНОГО СЕКТОРА</h3>
+                            <p><strong>Макаров Никита, ученик ИФб-24-1</strong><br>
+                            Председатель спортивного сектора выступает главным организатором и вдохновителем спортивной жизни в стенах общежития. Его ключевая задача — выявлять спортивные интересы студентов и превращать их в реальные события.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="activities">
+            <h2>НАША ДЕЯТЕЛЬНОСТЬ</h2>
+            <p>Студенческий совет общежития №6 активно организует мероприятия, праздники, спортивные соревнования и многое другое. Вот некоторые моменты из нашей насыщенной общажной и студенческой жизни в течении прошлого и начала нового учебных годов:</p>
+            
+            <div class="photo-gallery">
+                <img src="https://sun9-46.userapi.com/s/v1/if2/kCb-pUDT4LPSd-8D3asR297u-EnZyXrNBXNOOni4pY1EUp2mQwTN1hOzcyHl6Jlr8okp1frwC--4mxFP3uZM9gUs.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=1280x0" alt="Знакомство со студсоветом" class="photo-item">
+                <img src="https://sun9-42.userapi.com/s/v1/if2/Uzgo5TmMIKDhP2X0fwqYKs3fndhJLe4qizAq1mypBqmUMKRGt5Yz1_j6oXOIDgfUjsL2wrs4aHjnVv8DYUel5o77.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=1280x0" alt="Собрание с первокурсниками" class="photo-item">
+                <img src="https://sun9-66.userapi.com/s/v1/if2/l4uxk_hCjyxjaFn1Hzf_mf_-XNzcK7Bify8UnQm82vrsoN_PTxzdFdlvjugNjwI3Lm_yr57LWbLl4a8tSnAS45v9.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x426,720x480,1080x720,1280x853,1440x960,2560x1706&from=bu&cs=1280x0" alt="Посвящение в соседи" class="photo-item">
+                <img src="https://sun9-49.userapi.com/s/v1/if2/RDPmvhcMB22U_1dxKcGObAi6mU4UQj63iwC1FCMu0a3C2pFPouBHBBCK6l2PE9WHiKZJvMKM946OQ36fYZ1Bap_4.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x426,720x480,1080x720,1280x853,1440x960,2560x1706&from=bu&cs=1280x0" alt="Посвящение в соседи Студгородка" class="photo-item">
+                <img src="https://sun9-68.userapi.com/s/v1/if2/5DsgQbSozO-OeMg8FoVYbZsckbkTQOuDk82FpnkYtfTQw4ZMs6maxcj3Youwaw68SEEAMsC6mqRtYJp2YzeDSlN6.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=1280x0" alt="Субботник осенний" class="photo-item">
+                <img src="https://sun9-34.userapi.com/s/v1/if2/m1h9_FxkjhaQJvE8nxyxtYVCTFO8Csqqi19nG6skpnWn2LFQD5EhtPaQGSS-4_n2GkDFBJ2Kys0tjB7vtX4pzi2k.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=1280x0" alt="Соревнования по дартсу" class="photo-item">
+                <img src="https://sun9-28.userapi.com/s/v1/if2/4Wnudo5QMQzucAtrrRxgC21O3AliIFHxXtetBxeME2dcTuu7OT_m9LucTAKGcjAWnzpzGSJB2Y83dMSxcnCoAAvU.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=1280x0" alt="Интерактивная ночь кино" class="photo-item">
+                <img src="https://sun9-80.userapi.com/s/v1/if2/7GGY3mjk916cWkOPkUIxIraGiWNFGdaWFdA2XSSNirwiaq_gIHXS45Q7aiYPr4_z8zfc1rs7O3I53ZyGX2IJE2Qz.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=1280x0" alt="Муравейник студгородок" class="photo-item">
+                <img src="https://sun9-22.userapi.com/s/v1/if2/orEi9ouqYaq9-uRAKmhn2H85_B_W8zoIODs_EHSUR8KpJikUgnyYrspdZsYuWCdL-05vm2yiEbF2p7melIpGDyZP.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=1280x0" alt="Велесова ночь" class="photo-item">
+                <img src="https://sun9-47.userapi.com/s/v1/if2/u1-5nBQDkUGTqFmk0rY9RPsmM-ZSKurNZis06rRtLpFmGauKmyCN-C1-iK4ctLLUHs33qJgvSWtESZ8tu2BsqPnw.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=1280x0" alt="Сбор макулатуры" class="photo-item">
+                <img src="https://sun9-21.userapi.com/s/v1/if2/Euj20mAk-09UPK1T6t_4uHkrEBu3USOUTSxzeKRbQQxiiKx6IiFZwXzTiNLBth64SVQqYYgmydSccTQuJlksf_jc.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=1280x0" alt="Форум резонанс" class="photo-item">
+                <img src="https://sun9-71.userapi.com/s/v1/if2/-YwIelm-eV96ufh_RcgHQXi1yjtTz7dVcuWO1FNtAvN7NA61XawZObGT5pqw2o4WTeXqMerddAKg-omRw5Ql5QIs.jpg?quality=95&as=32x24,48x36,72x54,108x81,160x120,240x180,360x270,480x360,540x405,640x480,720x540,1080x810,1280x960,1440x1080&from=bu&cs=1280x0" alt="Мафия" class="photo-item">
+                <img src="https://sun9-83.userapi.com/s/v1/if2/bhzfHfg6jMr1_M88v5SLybDHYH9wf5FbdLAf0MpUAp6P-hXb8GbX4XdC1a6SKuWkmWxJztz6tEcp_gIke_G8C3k4.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=1280x0" alt="Соревнования по настольному теннису" class="photo-item">
+                <img src="https://sun9-38.userapi.com/s/v1/if2/821pF2i5fbXFcBNpCUA-nOssc7iIQ82C-TJOHCtb3nthCwhiWmslzRK1RD6Wqbx6ttmSevCjjz3GFIAJpfbd9B2W.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=1280x0" alt="Сибирь Территория мира и согласия" class="photo-item">
+                <img src="https://sun9-33.userapi.com/s/v1/if2/oFTvW93i6U08d0UHTgRrXtBgQbDGnjlS26AlnTbg3OSoJiyXpF-896DKUnptEXaG8U8woZ4uAerVJBIU3LmryBsJ.jpg?quality=95&as=32x24,48x36,72x54,108x81,160x120,240x180,360x270,480x360,540x405,640x480,720x540,1080x811,1280x961,1439x1080&from=bu&cs=1280x0" alt="Турнир по шахматам и шашкам" class="photo-item">
+                <img src="https://sun9-11.userapi.com/s/v1/if2/TorGrrnA7vw9ig6Sfn3UE_dzk67pAAhNWUFj7JJea3icWNfM4rfQGKzSlMLcELRagfZg-Qkh-1Ir0I904w5QsJtE.jpg?quality=95&as=32x24,48x36,72x54,108x81,160x120,240x180,360x271,480x361,540x406,640x481,720x541,1080x812,1280x962,1440x1083,2560x1925&from=bu&cs=1280x0" alt="Вечер патриотического кино" class="photo-item">
+                <img src="https://sun9-61.userapi.com/s/v1/if2/zTLgxP3jTBYWOpZG5mX65EtHa2_S6HV5i6pZU8RtktPHuFzr_jTXkO-vvRjICNMFgZY-HRvi2-lEhxe-4ifc_vdq.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=1280x0" alt="Битва полов Студгородок" class="photo-item">
+                <img src="https://sun9-1.userapi.com/s/v1/if2/7wC_1lZLWV_aAVb26HQ8wqB1LDmUXhxk4kuPCuWEzGwOpz3YUB6EJY8mXgz-yw_OzzymN3bjqW8aFlwpI2SBXH6g.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=1280x0" alt="23/8" class="photo-item">
+                <img src="https://sun9-50.userapi.com/s/v1/if2/6NNarFrIBW4PPWTdGDVY9jgm21tOfdfMwO4h8J4ivoJrLMa8wKerDGIkqNnPOL-srLjarsfzRWWCbjhRdmMssKoN.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=1280x0" alt="Поддержи иммунитет" class="photo-item">
+                <img src="https://sun9-18.userapi.com/s/v1/if2/FlQr9KWVK3BH4obufLhJftAkJN994iNtURlNBBWvbNHgY1v4C2MTO5l5PuCDKEvIzk4JHb9zAMQAvVuhNUJQMzTh.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=1280x0" alt="Сбор медикаментов" class="photo-item">
+                <img src="https://sun9-79.userapi.com/s/v1/if2/CBZdQPhL2py4Ca6gMsLJJcLvQwMVibtgIGR6v4SO2DtA2r8sCRpQe8OF8rhYCSyEW2ZhB5xZd_kv5steSzNzyNdw.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=1280x0" alt="Встреча с участником СВО" class="photo-item">
+                <img src="https://sun9-63.userapi.com/s/v1/if2/KZGAEFUUVrXrywcwW0_t8Lx6LYklL1m00dE1CxvX_Bwjyxn7wkwXkW6oix9F0n1tq8miyGyayK_v-BV4U_vpw-4m.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=1280x0" alt="Лекция Правильное питание" class="photo-item">
+                <img src="https://sun9-77.userapi.com/s/v1/if2/9KsIcSC0Dnges0u0CJ1zcIKgGhWl4pgEnkO9Q8-5aqBUAapxhOlVyCsE_HZY-Jd9PdkXnToGv0HhQb4Q-MIypHWr.jpg?quality=95&as=32x25,48x37,72x56,108x84,160x124,240x186,360x279,480x372,540x418,640x496,720x558,1080x837,1280x991,1440x1115,2560x1983&from=bu&cs=1280x0" alt="Письма участникам СВО" class="photo-item">
+                <img src="https://sun9-61.userapi.com/s/v1/if2/MeLpwQoaShZCjgnBXC5CJq4VNJ3jX0XSVWy_liNogc1_QfblE3nZOEdF_H-Tt5aXnB5xR3gSpzGM-BDmG9IAbzkq.jpg?quality=95&as=32x25,48x37,72x56,108x84,160x124,240x186,360x279,480x372,540x418,640x496,720x558,1080x837,1280x991,1440x1115,2560x1983&from=bu&cs=1280x0" alt="Многоборье" class="photo-item">
+                <img src="https://sun9-27.userapi.com/s/v1/if2/1Zv4vqwjp5HcdZiVSAw33qxJ61-YG22Xhv8_k5gn79rg_A9qXVf4ejQwzwNma7X5psPBtX1GfpaHZfvVxLDrsUS6.jpg?quality=95&as=32x24,48x36,72x54,108x81,160x119,240x179,360x269,480x358,540x403,640x478,720x537,1080x806,1280x955,1440x1075,2560x1911&from=bu&cs=1280x0" alt="Мафия" class="photo-item">
+                <img src="https://sun9-46.userapi.com/s/v1/if2/eiZ4Fv2mr3y694CWfObT54AZb2MThEkg-IH7V6XfTDazxz5KM077B8WRtfPwhoPwPxAVoLHCGnHy07VRwXFH1WtR.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=1280x0" alt="Турслёт" class="photo-item">
+                <img src="https://sun9-24.userapi.com/s/v1/if2/lA2S6W8NJbiOKXpAOP3smUt-GpPbQq5yxCbmuSCTkVpicl5z3EgX8LOG1Ql9tABPiG2vD7mm4dHepbwWBxdrTVUU.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=1280x0" alt="1 апреля" class="photo-item">
+                <img src="https://sun9-72.userapi.com/s/v1/if2/yvwmH117fuc6czvBviGvgQ7qkoPsOUwGUPza4rTeD9n2Uu0FZFxIJn-P2EbYypyJOGWdCetfiJt_qqBpuys9pvu-.jpg?quality=95&as=32x24,48x36,72x54,108x81,160x120,240x180,360x271,480x361,540x406,640x481,720x541,1080x812,1280x962,1440x1083,2560x1925&from=bu&cs=1280x0" alt="Киновечер" class="photo-item">
+                <img src="https://sun9-44.userapi.com/s/v1/if2/wvT_GFqFoB-qge8fod6kGnhl8m7O1RKTpFiD1VXcPijGWQTH9Tn8VzpA5J8K1Q1Ccj0cjSe86n-gDN2XW8CXFIan.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=1280x0" alt="Гиревый спорт Студгородок" class="photo-item">
+                <img src="https://sun9-27.userapi.com/s/v1/if2/N9K-9rcm-ekciWGdHvYOuCFz-80CgARgtiHcRFyQptxFzmyOw6ckY0GmjWL8sW5ynYOXjy8y38b9tnBOig-2euyw.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=1280x0" alt="Квартирник" class="photo-item">
+                <img src="https://sun9-37.userapi.com/s/v1/if2/KNPz8p0NjZ39lsqZFH0XxDHd9wRGF_-k_rJULJ45AjBdjoP9r-eMAM2Tg9RrgdOR69cnxSekbgdODA3xr3vt-oQw.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=1280x0" alt="Лекция Осторожно! клещи!" class="photo-item">
+                <img src="https://sun9-76.userapi.com/s/v1/if2/YJTpJe-JZGP2WXUfndvHfnNZPgfWK2XisyiUCqY9Fzq2MKhsID2ncB3oFLSvTsVxCvH8ar7SJiG_hlBYNlBfXKg6.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=1280x0" alt="Мисс и Мистер Студгородок" class="photo-item">
+                <img src="https://sun9-87.userapi.com/s/v1/if2/SXnLGMs8veJzy1_ULMNrigm0gEX5p9vwsnwf_KEV3XyWJhtGR0IZLlrAYmJEVMMXz2sjrNMu-P3HKOR63dDFnHev.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=1280x0" alt="Субботник весенний" class="photo-item">
+                <img src="https://sun9-69.userapi.com/s/v1/if2/kSl5smPlO5dKm3KBPhBQ8YGpr9feTY-h68_GDrZz42fKxbs7yRWvdHjqJXiB5JfuOIj3P4nAxGPc7yz7acWKbu0s.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=1280x0" alt="Квиз к 9 мая" class="photo-item">
+                <img src="https://sun9-34.userapi.com/s/v1/if2/V_hUH8PGRxcA4RUysJhjwq6agFrq3qFDknYxMyu2zv16xGHgL-ScmDI9aMuounpOqcPhNKSKcY9ii_oQd2gGBtT0.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=1280x0" alt="Зарница" class="photo-item">
+                <img src="https://sun9-57.userapi.com/s/v1/if2/GH8Nph1561mLOOTxNsyV0UptynzDBkLWILs54DpTe3zjT9HqZHMXkGbCqLzt_h7vsYORuHhgQhX0q7bGyUMCYnaL.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=1280x0" alt="Лучший студсовет Студгородок" class="photo-item">
+                <img src="https://sun9-51.userapi.com/s/v1/if2/KxLZGw4J9T5i1k4uyWhu8vS1V4CrnVzdEUXBRkTtN_zStU3QiSmDYqsveh-i73W0D_O2Nn38wlCsW85uiwOAv3qZ.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=1280x0" alt="Концерт 9 мая" class="photo-item">
+                <img src="https://sun9-67.userapi.com/s/v1/if2/6Va9szsxqUG3_5S_gk_D0zfxXv4BB5MibKU7-w7fOpiNZyuIQwBBLt4RCUavb5DncwGBVcYS6AJUIOfw9JYe0gLs.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=1280x0" alt="Праздник студгородка, закрытие года" class="photo-item">
+                <img src="https://sun9-83.userapi.com/s/v1/if2/7bBEr43K5FJUJcOgoV-smxJFQU1L8ljFyRtwtgDR-5yMIKGp-EIEF9fdm-Y-xboKN0ftg_C6r43qZ0vrDEVez9cH.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=1280x0" alt="Празник студсовета, закрытие года" class="photo-item">
+                <img src="https://sun9-61.userapi.com/s/v1/if2/5oXLkkhW5CT9H1xCV0PU1PbVD4b66UWoCXgLb6cEaMMjYNxNcPFoJ-rZVn8UPpay8xiQDX6HHBbdsNo-mxmeDGE7.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=1280x0" alt="Собрание первокурсников" class="photo-item">
+                <img src="https://sun9-63.userapi.com/s/v1/if2/90z6UiMHWizB6DQe1dH1epbqyFGj0nFLco8mUZMA5Y5761NWYL3EnI5GH-FTZqlwAz8562GVPxri3sxmnZ_3BYuQ.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=1280x0" alt="Знакомство со студсоветом" class="photo-item">
+                <img src="https://sun9-3.userapi.com/s/v1/if2/ShwtUl4VRIqcUwjbE88VQgm0u0d6STQMymJm_Vx8th76dd7nnsNEovbyEOhhBGfNszNG-xhajreafjBdEqwAdtPD.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=1280x0" alt="Акция Правила проживания" class="photo-item">
+                <img src="https://sun9-56.userapi.com/s/v1/if2/lUskzhHg0cGfpdvGDtx23jGcHD0SRMTFxVeV7vUZXOKcSb15hNg3sDXfWp53kbpuuzTMGGJnktRqEWkGoTgTe5A7.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=1280x0" alt="Акция 360 от Эн+" class="photo-item">
+                <img src="https://sun9-59.userapi.com/s/v1/if2/s3Cyy2ZMwxlou7mdxJzjuOY8xR2PwUb17eRdsLpRv9V4NRTaz_TNHWPmDQDLG5-olRbZeie7wTkEOeu6SwsCtt_B.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=1280x0" alt="Посвящение в соседи" class="photo-item">
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Если вам заинтересовала наша деятельность, подписывайтесь на наше сообщество, чтобы быть в эпицентре всех событий: <a href="https://vk.com/shesterochka66">https://vk.com/shesterochka66</a></p>
+            <p style="margin-top: 15px;">С любовью, ваше 6 общежитие ❤️</p>
+        </div>
+    </footer>
+</body>
+</html>
